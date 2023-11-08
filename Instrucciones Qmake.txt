@@ -1,0 +1,6 @@
+/*
+qmake -project
+echo "QT += widgets" >> [nom_carpeta.pro]
+qmake
+make
+*/
