@@ -1,46 +1,68 @@
 #include "calculadora.h"
 
-Calculadora::Calculadora(QWidget * parent) : QDialog(parent) {
+Calculadora::Calculadora(QWidget *parent) : QDialog(parent)
+{
 
-  setupUi(this);
-    
-    estadoActual = PRIMERO;
-    
-    connect(btnMas, SIGNAL(clicked()),this, SLOT(slotBotonMas()));
-    connect(btnIgual, SIGNAL(clicked()),this, SLOT(slotBotonIgual()));
-    connect(btn1, SIGNAL(clicked()),this, SLOT(slotDigito()));
-    connect(btn2, SIGNAL(clicked()),this, SLOT(slotDigito()));
-    connect(btn3, SIGNAL(clicked()),this, SLOT(slotDigito()));
+   setupUi(this);
 
-  }
-    void Calculadora::slotDigito(){
-    
-         QObject * objectoCulpable = sender();
-         QPushButton * botonCulpable;    
-         botonCulpable = qobject_cast<QPushButton*>(objectoCulpable);
-         QString textoBoton = botonCulpable->text();
-         display->setText(textoBoton);
-
-     };
+   estadoActual = PRIMERO;
    
+ for (int i = 0; i < layoutBotones->count(); i++) {
+ 
+    QLayoutItem *item = layoutBotones->itemAt(i);
+    QWidget * uidchet = item->widget();
+    QPushButton * botoncito = qobject_cast<QPushButton*>(uidchet);
     
-
-    void Calculadora::slotBotonMas(){
+   connect(
+        botoncito,
+        SIGNAL(clicked()),
+        this,
+        SLOT(slotDigito())
+    );
+ 
+    /*
+    connect(
+        layoutBotones->itemAt(i)->widget(),
+        SIGNAL(clicked()),
+        this,
+        SLOT(slotDigito())
+    );
     
-        if(estadoActual == PRIMERO){
-         sumando1 = display->text().toInt();
-         display->setText(NULL);
-         estadoActual = SEGUNDO;
-        }
-            
-     };
-     
-     void Calculadora::slotBotonIgual(){
-        if(estadoActual == SEGUNDO){
-           sumando2 = display->text().toInt();
-           total = sumando1 + sumando2;
-           display->setText(QString::number(total));
-           estadoActual = PRIMERO;
-        }
-     };
+    */
+    }
 
+    connect(btnMas, SIGNAL(clicked()), this, SLOT(slotBotonMas()));
+    connect(btnIgual, SIGNAL(clicked()), this, SLOT(slotBotonIgual()));
+}
+
+void Calculadora::slotDigito()
+{
+
+   QObject *objectoCulpable = sender();
+   QPushButton *botonCulpable;
+   botonCulpable = qobject_cast<QPushButton *>(objectoCulpable);
+   QString textoBoton = botonCulpable->text();
+   display->setText(display->text() + textoBoton);
+};
+
+void Calculadora::slotBotonMas()
+{
+
+   if (estadoActual == PRIMERO)
+   {
+      sumando1 = display->text().toInt();
+      display->setText(NULL);
+      estadoActual = SEGUNDO;
+   }
+};
+
+void Calculadora::slotBotonIgual()
+{
+   if (estadoActual == SEGUNDO)
+   {
+      sumando2 = display->text().toInt();
+      total = sumando1 + sumando2;
+      display->setText(QString::number(total));
+      estadoActual = PRIMERO;
+   }
+};

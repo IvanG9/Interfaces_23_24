@@ -25,18 +25,18 @@ class Ui_Calculadora
 public:
     QLineEdit *display;
     QWidget *widget;
-    QGridLayout *gridLayout;
-    QPushButton *pushButton_7;
+    QGridLayout *layoutBotones;
+    QPushButton *btn6;
     QPushButton *btn2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_12;
-    QPushButton *pushButton_8;
+    QPushButton *btn4;
+    QPushButton *btnsemicolon;
+    QPushButton *btn7;
     QPushButton *btn0;
-    QPushButton *pushButton_5;
+    QPushButton *btn5;
     QPushButton *btn3;
     QPushButton *btn1;
-    QPushButton *pushButton_10;
-    QPushButton *pushButton_9;
+    QPushButton *btn9;
+    QPushButton *btn8;
     QWidget *widget1;
     QVBoxLayout *verticalLayout;
     QPushButton *btnMas;
@@ -53,63 +53,63 @@ public:
         widget = new QWidget(Calculadora);
         widget->setObjectName(QString::fromUtf8("widget"));
         widget->setGeometry(QRect(30, 90, 391, 184));
-        gridLayout = new QGridLayout(widget);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_7 = new QPushButton(widget);
-        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
+        layoutBotones = new QGridLayout(widget);
+        layoutBotones->setObjectName(QString::fromUtf8("layoutBotones"));
+        layoutBotones->setContentsMargins(0, 0, 0, 0);
+        btn6 = new QPushButton(widget);
+        btn6->setObjectName(QString::fromUtf8("btn6"));
 
-        gridLayout->addWidget(pushButton_7, 4, 2, 1, 1);
+        layoutBotones->addWidget(btn6, 4, 2, 1, 1);
 
         btn2 = new QPushButton(widget);
         btn2->setObjectName(QString::fromUtf8("btn2"));
 
-        gridLayout->addWidget(btn2, 6, 1, 1, 1);
+        layoutBotones->addWidget(btn2, 6, 1, 1, 1);
 
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        btn4 = new QPushButton(widget);
+        btn4->setObjectName(QString::fromUtf8("btn4"));
 
-        gridLayout->addWidget(pushButton_4, 4, 0, 1, 1);
+        layoutBotones->addWidget(btn4, 4, 0, 1, 1);
 
-        pushButton_12 = new QPushButton(widget);
-        pushButton_12->setObjectName(QString::fromUtf8("pushButton_12"));
+        btnsemicolon = new QPushButton(widget);
+        btnsemicolon->setObjectName(QString::fromUtf8("btnsemicolon"));
 
-        gridLayout->addWidget(pushButton_12, 7, 2, 1, 1);
+        layoutBotones->addWidget(btnsemicolon, 7, 2, 1, 1);
 
-        pushButton_8 = new QPushButton(widget);
-        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
+        btn7 = new QPushButton(widget);
+        btn7->setObjectName(QString::fromUtf8("btn7"));
 
-        gridLayout->addWidget(pushButton_8, 0, 0, 1, 1);
+        layoutBotones->addWidget(btn7, 0, 0, 1, 1);
 
         btn0 = new QPushButton(widget);
         btn0->setObjectName(QString::fromUtf8("btn0"));
 
-        gridLayout->addWidget(btn0, 7, 1, 1, 1);
+        layoutBotones->addWidget(btn0, 7, 1, 1, 1);
 
-        pushButton_5 = new QPushButton(widget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        btn5 = new QPushButton(widget);
+        btn5->setObjectName(QString::fromUtf8("btn5"));
 
-        gridLayout->addWidget(pushButton_5, 4, 1, 1, 1);
+        layoutBotones->addWidget(btn5, 4, 1, 1, 1);
 
         btn3 = new QPushButton(widget);
         btn3->setObjectName(QString::fromUtf8("btn3"));
 
-        gridLayout->addWidget(btn3, 6, 2, 1, 1);
+        layoutBotones->addWidget(btn3, 6, 2, 1, 1);
 
         btn1 = new QPushButton(widget);
         btn1->setObjectName(QString::fromUtf8("btn1"));
 
-        gridLayout->addWidget(btn1, 6, 0, 1, 1);
+        layoutBotones->addWidget(btn1, 6, 0, 1, 1);
 
-        pushButton_10 = new QPushButton(widget);
-        pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
+        btn9 = new QPushButton(widget);
+        btn9->setObjectName(QString::fromUtf8("btn9"));
 
-        gridLayout->addWidget(pushButton_10, 0, 2, 1, 1);
+        layoutBotones->addWidget(btn9, 0, 2, 1, 1);
 
-        pushButton_9 = new QPushButton(widget);
-        pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
+        btn8 = new QPushButton(widget);
+        btn8->setObjectName(QString::fromUtf8("btn8"));
 
-        gridLayout->addWidget(pushButton_9, 0, 1, 1, 1);
+        layoutBotones->addWidget(btn8, 0, 1, 1, 1);
 
         widget1 = new QWidget(Calculadora);
         widget1->setObjectName(QString::fromUtf8("widget1"));
@@ -136,17 +136,17 @@ public:
     void retranslateUi(QDialog *Calculadora)
     {
         Calculadora->setWindowTitle(QCoreApplication::translate("Calculadora", "Dialog", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("Calculadora", "6", nullptr));
+        btn6->setText(QCoreApplication::translate("Calculadora", "6", nullptr));
         btn2->setText(QCoreApplication::translate("Calculadora", "2", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("Calculadora", "4", nullptr));
-        pushButton_12->setText(QCoreApplication::translate("Calculadora", ",", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("Calculadora", "7", nullptr));
+        btn4->setText(QCoreApplication::translate("Calculadora", "4", nullptr));
+        btnsemicolon->setText(QCoreApplication::translate("Calculadora", ",", nullptr));
+        btn7->setText(QCoreApplication::translate("Calculadora", "7", nullptr));
         btn0->setText(QCoreApplication::translate("Calculadora", "0", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("Calculadora", "5", nullptr));
+        btn5->setText(QCoreApplication::translate("Calculadora", "5", nullptr));
         btn3->setText(QCoreApplication::translate("Calculadora", "3", nullptr));
         btn1->setText(QCoreApplication::translate("Calculadora", "1", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("Calculadora", "9", nullptr));
-        pushButton_9->setText(QCoreApplication::translate("Calculadora", "8", nullptr));
+        btn9->setText(QCoreApplication::translate("Calculadora", "9", nullptr));
+        btn8->setText(QCoreApplication::translate("Calculadora", "8", nullptr));
         btnMas->setText(QCoreApplication::translate("Calculadora", "+", nullptr));
         btnIgual->setText(QCoreApplication::translate("Calculadora", "=", nullptr));
     } // retranslateUi
